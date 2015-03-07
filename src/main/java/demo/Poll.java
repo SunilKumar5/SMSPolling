@@ -1,11 +1,11 @@
 package demo;
 
-import java.math.BigDecimal;  
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Arrays;
+
 
 
 
@@ -25,6 +25,7 @@ import javax.validation.executable.ValidateOnExecution;
  * @author sunil
  *
  */
+@SuppressWarnings("unused")
 public class Poll {
 	protected String pollid;
 	@NotNull(message="routing number cannot be empty")

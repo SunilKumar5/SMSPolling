@@ -1,6 +1,6 @@
 package demo;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.ArrayList;  
 
 import javax.validation.Valid;
@@ -9,13 +9,14 @@ import javax.validation.Valid;
 
 
 
-import org.springframework.test.web.servlet.request.RequestPostProcessor;
+
+
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 //import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -130,7 +131,7 @@ Moderator mod = new Moderator();
 		//ObjectWriter objectWriter = objectMapper.viewWriter(Views.Public.class);
         //return objectWriter.writeValueAsString();
 		PollProxy proxy=new PollProxy();
-		Poll poll = new Poll();
+		
 
 		System.out.println(pollarray2.size());
 		// Moderator mod= new Moderator();
@@ -183,6 +184,7 @@ Moderator mod = new Moderator();
 	}
 	
 	
+	@SuppressWarnings("unused")
 	@RequestMapping(value="/moderators/{id}/polls", method =RequestMethod.GET)
 	public ArrayList<Poll> pollsList (@PathVariable int id)
 	{
@@ -238,6 +240,7 @@ Moderator mod = new Moderator();
 	@RequestMapping(value ="/polls/{pollid}",method =RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void voteAPoll(@PathVariable String pollid,@RequestParam (value="choice") int choice_index){
+		@SuppressWarnings("unused")
 		Poll pollobj1 = new Poll();
 		System.out.println("in method");
 		for (int i=0;i < modarray.size();i++){

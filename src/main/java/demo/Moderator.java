@@ -2,8 +2,9 @@ package demo;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Random;
-import java.io.Serializable;
+//import java.util.Random;
+//import java.io.Serializable;
+
 
 import javax.validation.constraints.NotNull;
 import javax.validation.executable.ValidateOnExecution;
@@ -46,6 +47,7 @@ public class Moderator {
 	public int getId() {
 		return id;
 	}
+	@SuppressWarnings("static-access")
 	public int setId() {
 	//	System.out.println(con.count++);
 		return con.count++;

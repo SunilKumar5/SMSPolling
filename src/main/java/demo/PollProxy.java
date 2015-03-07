@@ -1,6 +1,7 @@
 package demo;
 
-import java.math.BigDecimal;  
+import java.math.BigDecimal; 
+ 
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Arrays;
  * @author sunil
  *
  */
+@SuppressWarnings("unused")
 public class PollProxy {
 	protected String pollid;
 	protected String question;

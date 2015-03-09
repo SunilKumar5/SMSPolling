@@ -13,7 +13,6 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
-
 public class Moderator {
 
 	private int id;

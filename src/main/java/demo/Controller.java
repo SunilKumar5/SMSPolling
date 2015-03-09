@@ -126,7 +126,6 @@ Moderator mod = new Moderator();
 	
 	
 	@RequestMapping(value ="/polls/{pollid}", method =RequestMethod.GET)
-	
 	public PollProxy viewPoll(@PathVariable String pollid) throws IOException{
 	
 		//ObjectWriter objectWriter = objectMapper.viewWriter(Views.Public.class);

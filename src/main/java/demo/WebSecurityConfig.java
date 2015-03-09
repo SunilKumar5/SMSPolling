@@ -12,19 +12,15 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 @ComponentScan
 @EnableWebMvcSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-@Autowired
-public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-auth
-.inMemoryAuthentication()
-.withUser("foo").password("bar").roles("USER");
-System.out.println("in autowired");
-}
-@Override
-protected void configure(HttpSecurity http) throws Exception {
-	http.authorizeRequests().antMatchers("/api/v1/polls/**").permitAll().antMatchers("/api/v1/moderators/").permitAll()
-    .anyRequest().authenticated().and()
-    .httpBasic();
-  
-  http.csrf().disable();
-}
+
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("foo").password("bar").roles("USER");
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable().authorizeRequests().antMatchers("/api/v1/moderators/*").hasRole("USER").and().httpBasic();
+		http.csrf().disable().authorizeRequests().antMatchers("/api/v1/moderators/*/*").hasRole("USER").and().httpBasic();
+	}
 }
